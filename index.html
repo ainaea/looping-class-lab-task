@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops and Array</title>
+</head>
+<body>
+    <button onclick="classTask1()">class Task 1-sums over 50</button>
+    <button onclick="classTask2()">class Task 2-guess game</button>
+    <button onclick="labTask1()">lab Task 1-sum between 0 and N</button>
+    <button onclick="labTask2()">lab Task 2-facotrial</button>
+    <button onclick="labTask3()">lab Task 3-even numbers</button>
+
+    <script>
+        //while loop
+        // var i = 0;
+        // var sum = 0;
+
+        // while (i < 10) {
+        //     sum = sum + 1;
+        //     i = i + 1;
+        // }
+        // alert(`Sum of number one in ten times: ${sum}`);
+
+        //for loop
+        // var inputNum = prompt('Enter any number:')
+        // var result = inputNum;
+        // for (let i = inputNum; i > 0; i--) {
+            
+        //     document.write(`${result} <br>`);
+        //     result -= 1;
+           
+        // }
+
+
+        //do-while loop
+        // var answer= "";
+        // do {
+        //     answer = prompt(`Capital of United States:`,"");
+        // } while (answer != "Washington");
+
+        // document.write(`The answer is Correct: ${answer}`);
+
+        // Class task
+        // var sum = 0, average = 0, counter = 1;  
+        // while (counter <= 10) {
+        //     let input = parseFloat(prompt(`Enter input number ${counter}`))  ;
+        //         if (input == input) {
+        //             sum += input;
+        //             counter++;
+        //         }
+        //        // Alternatively
+        //         // sum += input;
+        //         // counter++;
+        // }
+        // average = sum / 10;
+        // document.write(`The total is ${sum} with an average of ${average}`)
+
+        //Ayokunle
+        // var Total = 0; i = 0;
+        // for (i; i < 10; i++) {
+        // var inputNum = prompt(`Enter the value ${i+1}`); 
+        //     if (inputNum != "") {
+        //         Total += parseInt(inputNum);  
+        //     } else {
+        //         i--
+        //     }
+            
+        // } 
+        // avg = Total / 10
+        // document.write(`The sum of the inputed numbers is: ${Total} and average is ${avg}`);
+
+    </script>
+    <script>
+        //The Break Statement
+        // var inputNum = parseInt(prompt('Enter number:'));
+        // var num = 2;
+        // while (num <= inputNum - 1){
+        //     if( inputNum % num == 0){
+        //         alert(`${inputNum} is not a prime Number`);
+        //         break;
+        //     }
+        //     num++;
+        // }
+
+        // if (num == inputNum){
+        //     alert(`${inputNum} is a prime Number`);
+        // }
+
+        
+    </script>
+    <script>
+        //Continue Statement
+        // var result = "";
+        // for (var i=0; i<=15; i++)
+        // {
+        //     if ((i % 2) !=0)
+        //     {
+        //         continue;
+        //     }
+        //     result = result + i + "\n";
+        // }
+        // alert(`Even Numbers: \n ${result}`);
+    </script>
+    <script>
+        // for (var num = 0; num <= 1000; num++)
+        // {
+        //     document.write(num + "<br>")
+        // }
+    </script>
+    <script>
+        //Afternoon task one
+        function classTask1() {
+            var  sum = 0, entry, times;
+            for (var i = 1; i <= 50; i++){
+                do {
+                    entry = parseInt(prompt(`Enter a number you will like add`)); 
+                } while ((entry != entry) || entry < 1 );
+                sum += entry;
+                times = i;
+                if (sum > 50){break;}
+            }
+            alert(`The sum is ${sum} from ${i} entries leaving average at ${sum / i} `)
+                
+        }
+        
+    </script>
+    <script>
+        //Guess game- Afternoon task two
+        function classTask2() {
+            for (let i = 1; i <= 4; i++) {
+                var guess = prompt(`Please make a four-digit guess: This is trial ${i} `);
+                if (guess == "4567"){
+                    alert("That was correct, you're a  good guesser");
+                    break;
+                }
+            alert("Sorry, please try again");
+            }
+        }
+
+        
+    </script>
+    <script>
+        //labTask1 - Summation from 1 to N
+        function labTask1() {
+            var entry, sum = 0;
+            do {
+                entry = parseInt(prompt(`Enter the number you will like to find sum of numbers below it; between 50 and 150`)); 
+            } while ((entry != entry) || entry < 50 || entry > 150 );
+
+            var adding = 1;
+            while (adding <= entry) {
+                sum +=adding++;
+            } 
+                                                     
+            alert(`The result is ${sum}`);
+        }
+
+        //labTask2 - Factorial
+        function labTask2() {
+            var entry, factorial = 1;
+            do {
+                entry = parseInt(prompt(`Enter the number you will like to find it's factorial`)); 
+            } while ((entry != entry) || entry < 1 );
+            
+            while (entry>1) {factorial *= entry--;
+                            
+            }
+            alert(`The result is ${factorial}`);
+        }
+        //labTask3 - all even
+        function labTask3() {
+            var entry, result = "";
+            do {
+                entry = parseInt(prompt(`Enter the number you will like to know even number up to it`)); 
+            } while ((entry != entry) || entry < 1 );
+            var i=2;
+            while (i<=entry)
+            {
+                result = result + i + " ";
+                i=i+2
+            }
+            alert(`The result is ${result}`);
+                       
+        }
+        
+    </script>
+</body>
+</html>
